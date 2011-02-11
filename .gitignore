@@ -2,3 +2,9 @@
 db/*.sqlite3
 log/*.log
 tmp/
+.rvmrc
+nbproject/
+config/database.yml
+public/system
+db/schema.rb
+log/**
