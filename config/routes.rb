@@ -1,5 +1,7 @@
 Yamamusic::Application.routes.draw do
-  devise_for :users
+  devise_for :users do
+    get "/login" => "devise/sessions#new"
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -50,7 +52,7 @@ Yamamusic::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  #root :to => "users#sign_in"
 
   # See how all your routes lay out with "rake routes"
 
