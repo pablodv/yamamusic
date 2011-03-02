@@ -1,7 +1,5 @@
 Yamamusic::Application.routes.draw do
-  devise_for :users do
-    get "/login" => "devise/sessions#new"
-  end
+  devise_for :users, :admins
 
   resource :dashboard, :only => :index
   # The priority is based upon order of creation:
