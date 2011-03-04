@@ -5,4 +5,8 @@ class User < ActiveRecord::Base
          :token_authenticatable
 
   attr_accessible :email, :password, :password_confirmation
+
+  def full_name
+  	"#{first_name} #{last_name}" || username
+  end
 end

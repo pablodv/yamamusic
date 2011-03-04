@@ -1,0 +1,12 @@
+<%= link_to "Dashboard", admins_dashboard_index_path %>
+<%= link_to "Users", admins_users_path %>
+<%= link_to "New Task", new_admins_task_path %>
+
+<% @tasks.each do |task| %>
+ <%= task.title %>
+ <%= task.status %>
+ <%= task.priority %>
+ <%= task.user.full_name %>
+ <%= link_to "Edit", edit_admins_task_path(task) %>
+ <%= link_to "Delete", admins_task_path(task), :method => :delete, :confirm => 'Are you sure?' %>
+<% end %>

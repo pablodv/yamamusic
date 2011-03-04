@@ -1,0 +1,10 @@
+<%= f.label :title %>
+<%= f.text_field :title %>
+<%= f.label :description %>
+<%= f.text_area :description %>
+<%= f.label :status %>
+<%= f.select :status, options_for_select(["Open", "Working", "Close"]) %>
+<%= f.label :priority %>
+<%= f.select :priority, options_for_select(["Hight", "Medium", "Low"]) %>
+<%= f.label :user_id %>
+<%= f.select :user_id, User.find(:all).collect{ |u| [u.full_name, u.id]} %>

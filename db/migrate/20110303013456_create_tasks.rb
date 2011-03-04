@@ -1,7 +1,7 @@
 class CreateTasks < ActiveRecord::Migration
   def self.up
     create_table :tasks do |t|
-      t.string :name
+      t.string :title
       t.text :description
       t.string :status
       t.string :priority

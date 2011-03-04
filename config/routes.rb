@@ -11,6 +11,8 @@ Yamamusic::Application.routes.draw do
 
   namespace :admins do
     resources :dashboard, :only => :index
+    resources :tasks
+    resources :users
   end
   
   resources :dashboard, :only => :index

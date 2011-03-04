@@ -1,0 +1,5 @@
+<%= form_for [:edit, :admins, @task] do |f| %>
+	<%= render :partial => "form", :locals => { :f => f} %>
+	<%= f.submit "Update" %>
+	<%= link_to "Cancel", admins_tasks_path %>
+<% end %>
