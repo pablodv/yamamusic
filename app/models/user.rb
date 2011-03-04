@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
          :rememberable, :registerable, :trackable, :timeoutable, :validatable,
          :token_authenticatable
 
-  attr_accessible :email, :password, :password_confirmation
+  attr_accessible :first_name, :last_name, :email, :password, :password_confirmation
 
   def full_name
   	"#{first_name} #{last_name}" || username

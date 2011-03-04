@@ -1,0 +1,5 @@
+<%= form_for [:admins, @user] do |f| %>
+  <%= render :partial => "form", :locals => { :f => f} %>
+  <%= f.submit "Update" %>
+  <%= link_to "Cancel", admins_users_path %>
+<% end %>
