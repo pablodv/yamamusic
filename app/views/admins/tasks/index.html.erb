@@ -1,12 +1,22 @@
-<%= link_to "Dashboard", admins_dashboard_index_path %>
-<%= link_to "Users", admins_users_path %>
-<%= link_to "New Task", new_admins_task_path %>
+<%= render :partial => "shared/nav_right" %>
+<%= render :partial => "shared/navigation" %>
 
-<% @tasks.each do |task| %>
- <%= task.title %>
- <%= task.status %>
- <%= task.priority %>
- <%= task.user.full_name %>
- <%= link_to "Edit", edit_admins_task_path(task) %>
- <%= link_to "Delete", admins_task_path(task), :method => :delete, :confirm => 'Are you sure?' %>
-<% end %>
+<table border="0" width="100%" cellpadding="0" cellspacing="0" id="product-table">
+
+  <%= render :partial => "header" %>
+
+	<% @tasks.each do |task| %>
+		<tr class="<%= cycle("", "alternate-row")%>">
+	 		<td><%= task.title %></td>
+	 		<td><%= task.status %></td>
+	 		<td><%= task.priority %></td>
+	 		<td><%= task.user.full_name %></td>
+			<td class="options-width">
+				<%= link_to "", edit_admins_task_path(task), :class => "icon-1 info-tooltip" %>
+	 			<%= link_to "", admins_task_path(task), :method => :delete, :confirm => 'Are you sure?', :class => "icon-2 info-tooltip" %>
+	 			<%= link_to "", admins_task_path(task), :class => "icon-5 info-tooltip" %>
+			</td>
+		<tr> 
+	<% end %>
+
+</table>

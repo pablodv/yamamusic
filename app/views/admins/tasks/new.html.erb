@@ -1,5 +1,15 @@
-<%= form_for [:admins, @task] do |f| %>
+<%= render :partial => "shared/nav_right" %>
+<%= render :partial => "shared/navigation" %>
+
+<table border="0" cellpadding="0" cellspacing="0"  id="id-form">
+  <%= form_for [:admins, @task] do |f| %>
 	<%= render :partial => "form", :locals => { :f => f} %>
-	<%= f.submit "Add" %>
-	<%= link_to "Cancel", admins_tasks_path %>
-<% end %>
+	<tr>
+	  <th></th>
+	  <td>
+	  	<%= f.submit "Add", :class => "form-submit" %>
+	  	<%= link_to "Cancel", admins_tasks_path %>
+	  </td>
+	</tr>
+  <% end %>
+</table

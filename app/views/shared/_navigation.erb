@@ -1,0 +1,36 @@
+<% content_for :navigation do %>
+  <div class="nav">
+    <div class="table">
+  	<ul class="<%= active('dashboard') %>">
+  	  <li>
+  	    <%= link_to admins_dashboard_index_path do %>
+  	      <b>Dashboard</b>
+  	    <% end %>
+  	  </li>
+  	</ul>
+  	
+  	<div class="nav-divider">&nbsp;</div>
+
+  	<ul class="<%= active('users') %>">
+  	  <li>
+  	    <%= link_to admins_users_path do %>
+  	      <b>Users</b>
+  	    <% end %>
+  	  </li>
+  	</ul>
+
+  	<div class="nav-divider">&nbsp;</div>
+
+  	<ul class="<%= active('tasks') %>">
+  	  <li>
+  	    <%= link_to admins_tasks_path do %>
+  	      <b>Tasks</b>
+  	    <% end %>
+  	  </li>
+  	</ul>
+  	<!-- class current para selecionar -->
+  	<div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+  </div>
+<% end %>

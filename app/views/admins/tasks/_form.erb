@@ -1,10 +1,20 @@
-<%= f.label :title %>
-<%= f.text_field :title %>
-<%= f.label :description %>
-<%= f.text_area :description %>
-<%= f.label :status %>
-<%= f.select :status, options_for_select(["Open", "Working", "Close"]) %>
-<%= f.label :priority %>
-<%= f.select :priority, options_for_select(["Hight", "Medium", "Low"]) %>
-<%= f.label :user_id %>
-<%= f.select :user_id, User.find(:all).collect{ |u| [u.full_name, u.id]} %>
+<tr>
+	<th valign="top">Title:</th>
+ 	<td><%= f.text_field :title, :class => "inp-form" %></td>
+</tr>
+<tr>
+	<th valign="top">Description:</th>
+ 	<td><%= f.text_area :description, :class => "form-textarea" %></td>
+</tr>
+<tr>
+	<th valign="top">Status:</th>
+ 	<td><%= f.select :status, options_for_select(["Open", "Working", "Close"]), {}, { :class => "styledselect_form_1" } %></td>
+</tr>
+<tr>
+	<th valign="top">Priority:</th>
+ 	<td><%= f.select :priority, options_for_select(["Hight", "Medium", "Low"]), {}, :class => "styledselect_form_1" %></td>
+</tr>
+<tr>
+	<th valign="top">User:</th>
+ 	<td><%= f.select :user_id, User.find(:all).collect{ |u| [u.full_name, u.id]}, {}, :class => "styledselect_form_1" %></td>
+</tr>

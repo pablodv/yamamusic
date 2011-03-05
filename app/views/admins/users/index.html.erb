@@ -1,6 +1,5 @@
-<%= link_to "Dashboard", admins_dashboard_index_path %>
-<%= link_to "Tasks", admins_tasks_path %>
-<%= link_to "New User", new_admins_user_path %>
+<%= render :partial => "shared/nav_right" %>
+<%= render :partial => "shared/navigation" %>
 
 <% @users.each do |user| %>
  <%= user.first_name %>

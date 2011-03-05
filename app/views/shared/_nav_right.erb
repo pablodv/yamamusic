@@ -1,0 +1,11 @@
+<% content_for :right_nav do %>
+	<div id="nav-right">
+	  <div class="nav-divider">&nbsp;</div>
+	  <div class="showhide-account">
+	  	<%= link_to image_tag("../images/shared/nav/nav_myaccount.gif", :size => "93x14"), '#' %>
+	  </div>
+	  <div class="nav-divider">&nbsp;</div>
+	  <%= link_to image_tag("../images/shared/nav/nav_logout.gif", :size => "64x14"), '#', :id => "logout" %>
+	  <div class="clear">&nbsp;</div>
+	</div>
+<% end %>
