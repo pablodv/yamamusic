@@ -1,3 +1,4 @@
+<%= f.error_messages %>
 <tr>
 	<th valign="top">Title:</th>
  	<td><%= f.text_field :title, :class => "inp-form" %></td>
@@ -17,4 +18,12 @@
 <tr>
 	<th valign="top">User:</th>
  	<td><%= f.select :user_id, User.find(:all).collect{ |u| [u.full_name, u.id]}, {}, :class => "styledselect_form_1" %></td>
+</tr>
+<tr>
+	<th valign="top">Start:</th>
+ 	<td><%= f.date_select :start_date, { :order => [:day, :month, :year] }, { :class => "styledselect-day" } %></td>
+</tr>
+<tr>
+	<th valign="top">End:</th>
+ 	<td><%= f.date_select :end_date, { :order => [:day, :month, :year] }, { :class => "styledselect-day" } %></td>
 </tr>

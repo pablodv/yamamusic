@@ -6,7 +6,7 @@ module ApplicationHelper
 
   def link_to_new_resource
     if new_action_defined?
-      link_to("New #{resource_class.name.titleize}", new_resource_url)
+      link_to("New #{resource_class.name.titleize}", new_resource_url) unless controller_name == "dashboard"
     end
   end
 
