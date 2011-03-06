@@ -14,4 +14,8 @@ module ApplicationHelper
     controller.class.action_methods.include?("new")
   end
 
+  def mark_error(resource, field)  
+    (resource.errors.include?(field) && !resource.errors[field].blank?) ? "inp-form-error" : "inp-form"
+  end 
+
 end

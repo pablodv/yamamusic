@@ -1,29 +1,49 @@
-<%= f.error_messages %>
 <tr>
 	<th valign="top">Title:</th>
- 	<td><%= f.text_field :title, :class => "inp-form" %></td>
+ 	<td><%= f.text_field :title, :class => mark_error(resource, :title) %></td>
+ 	<td>
+ 	  <%= render :partial => "shared/error", :locals => { :f => f, :field => :title } %>
+ 	</td>
 </tr>
 <tr>
 	<th valign="top">Description:</th>
  	<td><%= f.text_area :description, :class => "form-textarea" %></td>
+ 	<td>
+ 	  <%= render :partial => "shared/error", :locals => { :f => f, :field => :description } %>
+ 	</td>
 </tr>
 <tr>
 	<th valign="top">Status:</th>
  	<td><%= f.select :status, options_for_select(["Open", "Working", "Close"]), {}, { :class => "styledselect_form_1" } %></td>
+ 	<td>
+ 	  <%= render :partial => "shared/error", :locals => { :f => f, :field => :status } %>
+ 	</td>
 </tr>
 <tr>
 	<th valign="top">Priority:</th>
  	<td><%= f.select :priority, options_for_select(["Hight", "Medium", "Low"]), {}, :class => "styledselect_form_1" %></td>
+ 	<td>
+ 	  <%= render :partial => "shared/error", :locals => { :f => f, :field => :priority } %>
+ 	</td>
 </tr>
 <tr>
 	<th valign="top">User:</th>
  	<td><%= f.select :user_id, User.find(:all).collect{ |u| [u.full_name, u.id]}, {}, :class => "styledselect_form_1" %></td>
+ 	<td>
+ 	  <%= render :partial => "shared/error", :locals => { :f => f, :field => :user_id } %>
+ 	</td>
 </tr>
 <tr>
 	<th valign="top">Start:</th>
  	<td><%= f.date_select :start_date, { :order => [:day, :month, :year] }, { :class => "styledselect-day" } %></td>
+ 	<td>
+ 	  <%= render :partial => "shared/error", :locals => { :f => f, :field => :start_date } %>
+ 	</td>
 </tr>
 <tr>
 	<th valign="top">End:</th>
  	<td><%= f.date_select :end_date, { :order => [:day, :month, :year] }, { :class => "styledselect-day" } %></td>
+ 	<td>
+ 	  <%= render :partial => "shared/error", :locals => { :f => f, :field => :end_date } %>
+ 	</td>
 </tr>
