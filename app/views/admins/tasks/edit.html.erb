@@ -2,7 +2,7 @@
 <%= render :partial => "shared/navigation" %>
 
 <table border="0" cellpadding="0" cellspacing="0"  id="id-form">
-  <%= form_for [:edit, :admins, @task] do |f| %>
+  <%= form_for [:admins, @task] do |f| %>
 	<%= render :partial => "form", :locals => { :f => f} %>
 	<tr>
 	  <th></th>

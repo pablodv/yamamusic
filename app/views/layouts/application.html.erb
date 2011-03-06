@@ -2,8 +2,13 @@
 <html>
 <head>
   <title>Yamamusic</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
+  <%= stylesheet_link_tag "screen" %>
+  <%= javascript_include_tag "jquery-1.4.1.min", "rails", "ui.core", "ui.checkbox", "jquery.bind", "jquery.selectbox-0.5", "jquery.selectbox-0.5_style_2", "jquery.selectbox-0.5_style_3", "custom_jquery", "jquery.filestyle", "jquery.tooltip", "jquery.dimensions" %>
+
+  <%= stylesheet_link_tag "datePicker" %>
+  <%= javascript_include_tag "date", "jquery.datePicker", "jquery.pngFix.pack" %>
+  <%= javascript_include_tag "application" %>
+
   <%= csrf_meta_tag %>
 </head>
 <body>
@@ -53,7 +58,7 @@
     <!-- start content -->
     <div id="content">
 	    <!--  start page-heading -->
-	    <div id="page-heading"><h1><%= link_to_new_resource %></h1></div>	    
+	    <div id="page-heading"><h1><%#= link_to_new_resource %></h1></div>	    
 	    <!-- end page-heading -->
 
 	    <table border="0" width="100%" cellpadding="0" cellspacing="0" id="content-table">
@@ -108,6 +113,5 @@
 		<div class="clear">&nbsp;</div>
 	</div>
 	<!-- end footer -->
-<%= yield %>
 </body>
 </html>

@@ -38,7 +38,7 @@ way to fit your requirements.
 	padding: 0;
 	}
 .nav .select a	{
-	background: url(../images/shared/nav/pro_line_0.gif);
+/*	background: url(../images/shared/nav/pro_line_0.gif);*/
 	color: #fff;
 	display: block;
 	float: left;

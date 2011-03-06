@@ -1,10 +1,10 @@
 Yamamusic::Application.routes.draw do
-  devise_for :admins do
+  devise_for :admins, :controllers => { :sessions => "admins/users/sessions" } do
    get "/admins/login" => "devise/sessions#new"
    get "/admins/logout" => "devise/sessions#destroy" 
  end
   
-  devise_for :users do
+  devise_for :users, :controllers => { :sessions => "users/sessions" } do
    get "/login" => "devise/sessions#new"
    get "/logout" => "devise/sessions#destroy"
   end
@@ -17,6 +17,6 @@ Yamamusic::Application.routes.draw do
   
   resources :dashboard, :only => :index
 
-  root :to => 'home#index'
+  root :to => 'dashboard#index'
   
 end

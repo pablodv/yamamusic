@@ -1,0 +1,40 @@
+<!--  start loginbox ................................................................................. -->
+<div id="loginbox">
+	
+  <!--  start login-inner -->
+  <div id="login-inner">
+    <table border="0" cellpadding="0" cellspacing="0">
+	  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+        <tr>
+  	      <th>Email</th>
+          <td><%= f.text_field :email, :class => "login-inp" %></td>
+        </tr>
+        <tr>
+  	      <th>Password</th>
+  	      <td><%= f.password_field :password, :class => "login-inp" %></td>
+        </tr>
+        <% if devise_mapping.rememberable? -%>
+          <tr>
+            <th></th>
+            <td valign="top">
+		      <%= f.check_box :remember_me, :class => "checkbox-size", :id => "login-check" %>
+		      <%= f.label :remember_me %>
+	        </td>
+          </tr>
+        <% end -%>
+        <tr>
+	      <th></th>
+  	      <td><%= f.submit "Sign in", :class => "submit-login" %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+  <!--  end login-inner -->
+
+  <div class="clear"></div>
+  <!-- <a href="" class="forgot-pwd">Forgot Password?</a> -->
+  <%= link_to "Administrator", new_admin_session_path, :class => "admin"  %>
+</div>
+<!--  end loginbox -->
+
+<%#= render :partial => "devise/shared/links" %>

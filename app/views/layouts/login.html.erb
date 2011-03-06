@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Yamamusic</title>
+  <%= stylesheet_link_tag "screen" %>
+  <%= javascript_include_tag "jquery-1.4.1.min", "custom_jquery", "jquery.pngFix.pack" %>
+  <script type="text/javascript">
+	$(document).ready(function(){
+	$(document).pngFix( );
+	});
+  </script>
+
+</head>
+<body id="login-bg"> 
+ 
+  <!-- Start: login-holder -->
+	<div id="login-holder">
+
+		<!-- start logo -->
+		<div id="logo-login">
+			<a href="index.html"><img src="../images/shared/logo.png" width="156" height="40" alt="" /></a>
+		</div>
+		<!-- end logo -->
+	
+		<div class="clear"></div>
+	
+		<%= yield %>
+ 
+	<!--  start forgotbox ................................................................................... -->
+	<div id="forgotbox">
+		<div id="forgotbox-text">Please send us your email and we'll reset your password.</div>
+		<!--  start forgot-inner -->
+		<div id="forgot-inner">
+		<table border="0" cellpadding="0" cellspacing="0">
+		<tr>
+			<th>Email address:</th>
+			<td><input type="text" value=""   class="login-inp" /></td>
+		</tr>
+		<tr>
+			<th> </th>
+			<td><input type="button" class="submit-login"  /></td>
+		</tr>
+		</table>
+		</div>
+		<!--  end forgot-inner -->
+		<div class="clear"></div>
+		<a href="" class="back-login">Back to login</a>
+	</div>
+	<!--  end forgotbox -->
+
+</div>
+<!-- End: login-holder -->
+</body>
+</html>
