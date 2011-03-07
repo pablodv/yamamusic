@@ -5,7 +5,11 @@
 	  	<%= link_to image_tag("../images/shared/nav/nav_myaccount.gif", :size => "93x14"), '#' %>
 	  </div>
 	  <div class="nav-divider">&nbsp;</div>
-	  <%= link_to image_tag("../images/shared/nav/nav_logout.gif", :size => "64x14"), '#', :id => "logout" %>
+	  <% if current_user.is_a?(User) %>
+	    <%= link_to image_tag("../images/shared/nav/nav_logout.gif", :size => "64x14"), destroy_user_session_path, :id => "logout" %>
+	  <% else %>
+	    <%= link_to image_tag("../images/shared/nav/nav_logout.gif", :size => "64x14"), destroy_admin_session_path, :id => "logout" %>
+	  <% end %>
 	  <div class="clear">&nbsp;</div>
 	</div>
 <% end %>
