@@ -1,5 +1,15 @@
-<%= form_for [:admins, @user] do |f| %>
-  <%= render :partial => "form", :locals => { :f => f} %>
-  <%= f.submit "Update" %>
-  <%= link_to "Cancel", admins_users_path %>
-<% end %>
+<%= render :partial => "shared/nav_right" %>
+<%= render :partial => "shared/navigation" %>
+
+<table border="0" cellpadding="0" cellspacing="0"  id="id-form">
+  <%= form_for [:admins, @user] do |f| %>
+    <%= render :partial => "form", :locals => { :f => f, :edit => true } %>
+    <tr>
+	  <th></th>
+	  <td>
+        <%= f.submit "Update", :class => "form-submit" %>
+        <%= link_to "Cancel", admins_users_path, :class => "form-cancel" %>
+      </td>
+    </tr>
+  <% end %>
+</table>

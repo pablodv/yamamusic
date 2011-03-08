@@ -19,17 +19,20 @@
     <%= render :partial => "shared/error", :locals => { :f => f, :field => :email } %>
   </td>
 </tr>
-<tr>
-  <th valign="top">Password:</th>
-  <td><%= f.password_field :password, :class => mark_error(resource, :password) %></td>
-  <td>
-    <%= render :partial => "shared/error", :locals => { :f => f, :field => :password } %>
-  </td>
-</tr>
-<tr>
-  <th valign="top">Password Confirmation:</th>
-  <td><%= f.password_field :password_confirmation, :class => mark_error(resource, :password_confirmation) %></td>
-  <td>
-    <%= render :partial => "shared/error", :locals => { :f => f, :field => :password_confirmation } %>
-  </td>
-</tr>
+
+<% unless edit %>
+  <tr>
+    <th valign="top">Password:</th>
+    <td><%= f.password_field :password, :class => mark_error(resource, :password) %></td>
+    <td>
+      <%= render :partial => "shared/error", :locals => { :f => f, :field => :password } %>
+    </td>
+  </tr>
+  <tr>
+    <th valign="top">Password Confirmation:</th>
+    <td><%= f.password_field :password_confirmation, :class => mark_error(resource, :password_confirmation) %></td>
+    <td>
+      <%= render :partial => "shared/error", :locals => { :f => f, :field => :password_confirmation } %>
+    </td>
+  </tr>
+<% end %>
