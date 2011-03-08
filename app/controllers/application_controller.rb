@@ -8,4 +8,8 @@ class ApplicationController < ActionController::Base
       admins_dashboard_index_path
     end
   end
+
+  def load_comments
+  	@comments = resource.comments.less_recent
+  end
 end

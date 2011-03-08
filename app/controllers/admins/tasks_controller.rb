@@ -1,5 +1,6 @@
 class Admins::TasksController < InheritedResources::Base
   before_filter :authenticate_admin!
+  before_filter :load_comments, :only => :show
 
   def create
     create! do |success, failure|

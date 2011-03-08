@@ -1,0 +1,4 @@
+<%= simple_form_for [:admins, resource, resource.comments.build] do |f| %>
+  <%= f.text_area :body, :class => "form-textarea-comment" %>
+  <%= f.submit "submit", :class => "form-submit" %>
+<% end %>
