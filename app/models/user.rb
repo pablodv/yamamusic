@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   has_many :tasks
+  has_and_belongs_to_many :messages
+
   devise :database_authenticatable, :confirmable, :recoverable,
          :rememberable, :registerable, :trackable, :timeoutable, :validatable,
          :token_authenticatable
