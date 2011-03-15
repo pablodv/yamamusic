@@ -41,10 +41,26 @@
         <% end %>
   	  </li>
   	</ul>
+
+    <div class="nav-divider">&nbsp;</div>
+
+    <ul class="<%= active('messages') %>">
+      <li>
+        <% if current_user.is_a?(User) %>
+          <%= link_to messages_path do %>
+            <b>Messages</b>
+          <% end %>
+        <% else %>
+          <%= link_to admins_messages_path do %>
+            <b>Messages</b>
+          <% end %>
+        <% end %>
+      </li>
+    </ul>
   	<!-- class current para selecionar -->
   	<div class="clear"></div>
-    </div>
-    <div class="clear"></div>
   </div>
+  <div class="clear"></div>
+</div>
 
 <% end %>

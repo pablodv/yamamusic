@@ -1,0 +1,19 @@
+<%= render :partial => "shared/nav_right" %>
+<%= render :partial => "shared/navigation" %>
+
+<%= render :partial => "shared/notice" %>
+
+<table border="0" width="100%" cellpadding="0" cellspacing="0" id="product-table">
+  <%= render :partial => "header" %>
+  <% @messages.each do |message| %>
+	<tr class="<%= cycle("", "alternate-row")%>">
+	  <td><%= message.subject %></td>
+	  <td><%= truncate(message.body, :length => 200) %></td>
+	  <td class="options-width">
+		<%#= link_to "", edit_admins_message_path(message), :class => "icon-1 info-tooltip" %>
+	 	<%#= link_to "", admins_message_path(message), :method => :delete, :confirm => 'Are you sure?', :class => "icon-2 info-tooltip" %>
+	 	<%= link_to "", admins_message_path(message), :class => "icon-5 info-tooltip" %>
+	  </td>
+   	<tr> 
+  <% end %>
+</table>

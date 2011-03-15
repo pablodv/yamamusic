@@ -1,0 +1,29 @@
+<!--  start related-activities -->
+<div id="related-activities-message">
+  		
+  <!--  start related-act-top -->
+  <div id="related-act-top">
+    <%= image_tag "../images/forms/header_related_act.gif", :size => "271x43" %>
+  </div>
+  <!-- end related-act-top -->
+		
+  <!--  start related-act-bottom -->
+  <div id="related-act-bottom">
+    <!--  start related-act-inner -->
+	  <div id="related-act-inner">
+	    <% @message.recipents.each do |recipent| %>
+        <% if recipent.read? %>
+	        <div class="left"><%= image_tag "../images/forms/icon_edit.gif", :size => "21x21" %></div>
+	        <div class="right"><h5><%= recipent.user.full_name %></h5></div>
+	        <div class="clear"></div>
+	        <div class="lines-dotted-short"></div>
+        <% end %>
+	    <% end %>
+    </div>
+    <!-- end related-act-inner -->
+    <div class="clear"></div>
+  </div>
+  <!-- end related-act-bottom -->
+
+</div>
+<!-- end related-activities -->

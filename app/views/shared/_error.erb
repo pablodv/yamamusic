@@ -1,4 +1,3 @@
-<% Rails.logger.info "#{resource.errors.inspect}" %>
 <% if resource.errors.include?(field) && !resource.errors[field].blank? %>
   <div class="error-left"></div>
   <%= f.error_message_on field, :html_tag => "div", :css_class => "error-inner" %>

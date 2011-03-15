@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :tasks
-  has_and_belongs_to_many :messages
+  has_many :recipents
+  has_many :messages, :through => :recipents
 
   devise :database_authenticatable, :confirmable, :recoverable,
          :rememberable, :registerable, :trackable, :timeoutable, :validatable,

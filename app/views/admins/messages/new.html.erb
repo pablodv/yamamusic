@@ -1,0 +1,19 @@
+<%= render :partial => "shared/nav_right" %>
+<%= render :partial => "shared/navigation" %>
+
+<table border="0" cellpadding="0" cellspacing="0"  id="id-form">
+  <%= form_for [:admins, @message] do |f| %>
+	<%= render :partial => "form", :locals => { :f => f} %>
+	<tr>
+	  <th></th>
+	  <td><ul id="user_list"></ul></td>
+	</tr
+	<tr>
+	  <th></th>
+	  <td>
+	  	<%= f.submit "Add", :class => "form-submit" %>
+	  	<%= link_to "Cancel", admins_messages_path, :class => "form-cancel" %>
+	  </td>
+	</tr>
+  <% end %>
+</table

@@ -15,6 +15,7 @@ Yamamusic::Application.routes.draw do
       resources :comments
     end
     resources :users
+    resources :messages
   end
   
   resources :dashboard, :only => :index

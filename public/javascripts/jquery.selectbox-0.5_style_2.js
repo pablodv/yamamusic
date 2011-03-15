@@ -177,6 +177,7 @@ jQuery.SelectBox = function(selectobj, options) {
 		$select.children('option').each(function() {
 			var li = document.createElement('li');
 			li.setAttribute('id', parentid + '_' + $(this).val());
+			li.setAttribute('rel', $(this).val());
 			li.innerHTML = $(this).html();
 			if ($(this).is(':selected')) {
 				$input.val($(this).html());

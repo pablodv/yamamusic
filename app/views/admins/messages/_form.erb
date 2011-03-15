@@ -1,0 +1,15 @@
+<tr>
+	<th valign="top">Subject:</th>
+ 	<td><%= f.text_field :subject, :class => mark_error(resource, :subject) %></td>
+ 	<td><%= render :partial => "shared/error", :locals => { :f => f, :field => :subject } %></td>
+</tr>
+<tr>
+	<th valign="top">Body:</th>
+ 	<td><%= f.text_area :body, :class => "form-textarea" %></td>
+ 	<td></td>
+</tr>
+<tr>
+	<th valign="top">User:</th>
+ 	<td><%= select_tag "users", options_for_select(User.find(:all).collect{ |u| [u.full_name, u.id] }), :class => "styledselect_form_1" %></td>
+ 	<td></td>
+</tr>
