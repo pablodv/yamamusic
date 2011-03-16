@@ -1,4 +1,6 @@
 class Admins::MessagesController < InheritedResources::Base
+  before_filter :authenticate_admin!
+  
   actions :index, :new, :create, :show
 
   def create

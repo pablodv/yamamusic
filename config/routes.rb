@@ -22,6 +22,7 @@ Yamamusic::Application.routes.draw do
   resources :tasks do
     resources :comments
   end
+  resources :messages
 
   root :to => 'dashboard#index'
   
