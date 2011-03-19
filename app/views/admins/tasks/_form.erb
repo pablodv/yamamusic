@@ -21,7 +21,7 @@
 </tr>
 <tr>
 	<th valign="top">Priority:</th>
- 	<td><%= f.select :priority, options_for_select(["Hight", "Medium", "Low"]), {}, :class => "styledselect_form_1" %></td>
+ 	<td><%= f.select :priority, options_for_select(["High", "Medium", "Low"]), {}, :class => "styledselect_form_1" %></td>
  	<td>
  	  <%= render :partial => "shared/error", :locals => { :f => f, :field => :priority } %>
  	</td>

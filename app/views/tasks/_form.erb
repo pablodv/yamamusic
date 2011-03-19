@@ -1,0 +1,26 @@
+<tr>
+  <th valign="top">Title:</th>
+  <td><%= f.text_field :title, :class => "inp-form", :disabled => true %></td>
+</tr>
+<tr>
+  <th valign="top">Description:</th>
+  <td><%= f.text_area :description, :class => "form-textarea", :disabled => true %></td>
+</tr>
+<tr>
+  <th valign="top">Status:</th>
+  <td>
+    <%= f.select :status, options_for_select(["Open", "Working", "Close"]), {}, { :class => "styledselect_form_1" } %>
+  </td>
+</tr>
+<tr>
+	<th valign="top">Priority:</th>
+ 	<td><%= f.text_field :priority, :class => "inp-form", :disabled => true %></td>
+</tr>
+<tr>
+  <th valign="top">Start:</th>
+  <td><%= f.date_select :start_date, { :order => [:day, :month, :year] }, { :class => "styledselect-day" } %></td>
+</tr>
+<tr>
+  <th valign="top">End:</th>
+  <td><%= f.date_select :end_date, { :order => [:day, :month, :year] }, { :class => "styledselect-day" } %></td>
+</tr>

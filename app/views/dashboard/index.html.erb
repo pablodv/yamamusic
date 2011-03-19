@@ -1,2 +1,24 @@
 <%= render :partial => "shared/nav_right" %>
 <%= render :partial => "shared/navigation" %>
+
+<h2>Tasks</h2>
+
+<table border="0" width="100%" cellpadding="0" cellspacing="0" id="product-table">
+  <%= render :partial => "tasks/header" %>
+  <% @tasks.each do |task| %>
+    <tr class="<%= priority(task.priority) %>">
+	  <td><%= task.title %></td>
+	  <td><%= task.status %></td>
+	  <td><%= task.priority %></td>
+	  <td class="options-width">
+		<%= link_to "", edit_task_path(task), :class => "icon-1 info-tooltip" %>
+	 	<%= link_to "", task_path(task), :class => "icon-5 info-tooltip" %>
+	  </td>
+   	<tr> 
+  <% end %>
+</table>
+
+<h2>Messages(<%= @messages.count %>)</h2>
+<% @messages.each do |message| %>
+  <%= message.subject %>
+<% end %>

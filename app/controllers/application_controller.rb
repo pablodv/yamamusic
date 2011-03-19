@@ -12,4 +12,12 @@ class ApplicationController < ActionController::Base
   def load_comments
   	@comments = resource.comments.less_recent
   end
+
+  def load_tasks
+    @tasks = Task.by_user(current_user.id).recent.limit(10)
+  end
+
+  def load_messages
+    @messages = Message.by_user(current_user.id, false).recent.limit(10)
+  end
 end

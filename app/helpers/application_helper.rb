@@ -18,4 +18,14 @@ module ApplicationHelper
     (resource.errors.include?(field) && !resource.errors[field].blank?) ? "inp-form-error" : "inp-form"
   end 
   
+  def priority(priority)
+    case priority
+      when "High"
+        'tr-red'
+      when "Medium"
+        'tr-yellow'
+      when "Low"
+        'tr-green'
+    end
+  end
 end

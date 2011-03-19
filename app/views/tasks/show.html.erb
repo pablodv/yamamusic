@@ -2,10 +2,12 @@
 <%= render :partial => "shared/navigation" %>
 
 <h3><%= @task.title %></h3>
-<%= @task.status %><br/>
-<%= @task.priority %><br/>
-<%= @task.start_date %><br/>
-<%= @task.end_date %><br/>
-<%= @task.description %>
+<span class="content-text">
+  <%= @task.status %><br/>
+  <%= @task.priority %><br/>
+  <%= @task.start_date %><br/>
+  <%= @task.end_date %><br/>
+  <%= @task.description %>
+</span>
 
 <%= render :partial => "shared/comments" %>
