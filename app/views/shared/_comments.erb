@@ -21,7 +21,11 @@
 	      <div class="lines-dotted-short"></div>
 	    <% end %>
       <div class="comment-form">
-        <%= render :partial => "admins/comments/form" %>
+        <% if current_user.is_a?(User) %>
+          <%= render :partial => "comments/form" %>
+        <% else %>
+          <%= render :partial => "admins/comments/form" %>
+        <% end %>
       </div>
     </div>
     <!-- end related-act-inner -->
